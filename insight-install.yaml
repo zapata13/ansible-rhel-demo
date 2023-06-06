@@ -1,0 +1,13 @@
+---
+- name: deploy insights client with tags
+  hosts: all
+ 
+  tasks:
+  - include_role:
+      name: redhat.insights.insights_client
+      vars:
+        insights_tags:
+          env: dev
+          site: ceaca
+          app: demo
+          default_ip: “{{ ansible_default_ipv4.address }}”
